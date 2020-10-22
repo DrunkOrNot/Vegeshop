@@ -32,13 +32,16 @@ import com.google.mlkit.vision.common.InputImage;
 import java.util.List;
 
 public class BarcodeProcessor {
-    private void scanBarcodes(InputImage image) {
+
+    static public void scanBarcodes(InputImage image) {
         // [START set_detector_options]
         BarcodeScannerOptions options =
                 new BarcodeScannerOptions.Builder()
                         .setBarcodeFormats(
-                                Barcode.FORMAT_QR_CODE,
-                                Barcode.FORMAT_AZTEC)
+                                Barcode.FORMAT_EAN_8,
+                                Barcode.FORMAT_EAN_13,
+                                Barcode.FORMAT_UPC_A,
+                                Barcode.FORMAT_UPC_E)
                         .build();
         // [END set_detector_options]
 
