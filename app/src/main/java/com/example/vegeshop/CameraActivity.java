@@ -356,6 +356,7 @@ public class CameraActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
     private static Size chooseOptimalSize(Size[] choices, int textureViewWidth,
                                           int textureViewHeight, int maxWidth, int maxHeight, Size aspectRatio) {
 
@@ -412,6 +413,7 @@ public class CameraActivity extends AppCompatActivity {
         }
         textureView.setTransform(matrix);
     }
+
     private void showToast(final String text) {
         runOnUiThread(new Runnable() {
             @Override
