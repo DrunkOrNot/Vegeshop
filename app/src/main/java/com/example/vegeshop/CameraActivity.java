@@ -89,9 +89,8 @@ public class CameraActivity extends AppCompatActivity implements IRecognizeBarco
 
     @Override
     public void OnRecognizeBarcode(String ID) {
-   /*     Intent intent = new Intent(CameraActivity.this, ResultActivity.class);
+        Intent intent = new Intent(CameraActivity.this, ResultActivity.class);
         intent.putExtra("ProductID", ID);
-        startActivity(intent);*/
-        CameraActivity.this.startActivity(new Intent(CameraActivity.this, ResultActivity.class));
+        startActivity(intent);
     }
 }

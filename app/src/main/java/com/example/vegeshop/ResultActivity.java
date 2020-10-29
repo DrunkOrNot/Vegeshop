@@ -19,18 +19,17 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        btnForceAdd.findViewById(R.id.btnForceAdd);
-        txtID.findViewById(R.id.txtID);
+        btnForceAdd=findViewById(R.id.btnForceAdd);
+        txtID=findViewById(R.id.txtID);
 
+        txtID.setText(getIntent().getStringExtra("ProductID"));
 
-
-        btnForceAdd.setOnClickListener(new View.OnClickListener() {
+       btnForceAdd.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
                 ResultActivity.this.startActivity(new Intent(ResultActivity.this, AddProductActivity.class));
             }
         });
-
     }
 }
