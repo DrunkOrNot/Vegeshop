@@ -1,6 +1,7 @@
 package com.example.vegeshop;
 
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -17,10 +18,12 @@ import com.wonderkiln.camerakit.CameraKitImage;
 import com.wonderkiln.camerakit.CameraKitVideo;
 import com.wonderkiln.camerakit.CameraView;
 
-public class CameraActivity extends AppCompatActivity {
+public class CameraActivity extends AppCompatActivity implements IRecognizeBarcodeListener{
 
     CameraView cameraView;
     Button btnCheck;
+    BarcodeProcessor barcodeProcessor;
+
 
     @Override
     protected void onResume() {
@@ -43,6 +46,10 @@ public class CameraActivity extends AppCompatActivity {
 
         cameraView  =  (CameraView)findViewById(R.id.cameraView);
         btnCheck = (Button)findViewById(R.id.btnCheck);
+        barcodeProcessor = new BarcodeProcessor();
+
+        barcodeProcessor.AddListener(this);
+
 
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,8 +74,10 @@ public class CameraActivity extends AppCompatActivity {
             public void onImage(CameraKitImage cameraKitImage) {
                 Bitmap bitmap = cameraKitImage.getBitmap();
                 bitmap = Bitmap.createScaledBitmap(bitmap,  cameraView.getWidth(),  cameraView.getHeight(), false);
-                BarcodeProcessor.scanBarcodes(InputImage.fromBitmap(bitmap, 0));
+                barcodeProcessor.scanBarcodes(InputImage.fromBitmap(bitmap, 0));
                 cameraView.stop();
+
+
             }
 
             @Override
@@ -78,4 +87,11 @@ public class CameraActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void OnRecognizeBarcode(String ID) {
+   /*     Intent intent = new Intent(CameraActivity.this, ResultActivity.class);
+        intent.putExtra("ProductID", ID);
+        startActivity(intent);*/
+        CameraActivity.this.startActivity(new Intent(CameraActivity.this, ResultActivity.class));
+    }
 }

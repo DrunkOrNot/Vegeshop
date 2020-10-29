@@ -2,9 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.vegeshop">
 
-    // https://www.youtube.com/watch?v=_wZvds9CfuE
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.Camera2"></uses-feature>
+
+    <uses-feature android:name="android.hardware.Camera2" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vegeshop">
-        <activity android:name=".CameraActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login"></activity>
+        <activity android:name=".AddProductActivity" />
+        <activity android:name=".ResultActivity" />
+        <activity
+            android:name=".CameraActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +29,5 @@
             </intent-filter>
         </activity>
     </application>
-
 
 </manifest>

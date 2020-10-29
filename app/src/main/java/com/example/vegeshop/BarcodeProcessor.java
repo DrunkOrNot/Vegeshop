@@ -18,6 +18,7 @@ package com.example.vegeshop;
 
 import android.graphics.Point;
 import android.graphics.Rect;
+
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,11 +30,14 @@ import com.google.mlkit.vision.barcode.BarcodeScannerOptions;
 import com.google.mlkit.vision.barcode.BarcodeScanning;
 import com.google.mlkit.vision.common.InputImage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BarcodeProcessor {
 
-    static public void scanBarcodes(InputImage image) {
+    private ArrayList<IRecognizeBarcodeListener> Listeners =  new ArrayList<>();
+
+    public void scanBarcodes(InputImage image) {
         // [START set_detector_options]
         BarcodeScannerOptions options =
                 new BarcodeScannerOptions.Builder()
@@ -65,6 +69,10 @@ public class BarcodeProcessor {
 
                             String rawValue = barcode.getRawValue();
 
+                            for(IRecognizeBarcodeListener listener:Listeners){
+                                listener.OnRecognizeBarcode(rawValue);
+                            }
+
                             int valueType = barcode.getValueType();
                             // See API reference for complete list of supported types
                             switch (valueType) {
@@ -91,5 +99,10 @@ public class BarcodeProcessor {
                     }
                 });
         // [END run_detector]
+
+
+    }
+    public void AddListener(IRecognizeBarcodeListener listener){
+        Listeners.add(listener);
     }
 }
