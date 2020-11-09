@@ -36,7 +36,6 @@ public class AddProductActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spTrait.setAdapter(adapter);
 
-
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
@@ -47,11 +46,12 @@ public class AddProductActivity extends AppCompatActivity {
                 Ingredient ingredient = new Ingredient();
                 ingredient.ID = String.valueOf(1);
                 ingredient.Name = inIngredientName.getText();
+                product.Ingredients.Add(ingredient);
+
+                Database.PostData(product);
+
             }
         });
-
-
-
     }
 }
 
