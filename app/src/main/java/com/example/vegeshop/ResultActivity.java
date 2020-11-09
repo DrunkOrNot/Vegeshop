@@ -28,7 +28,9 @@ public class ResultActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                ResultActivity.this.startActivity(new Intent(ResultActivity.this, AddProductActivity.class));
+                Intent intent = new Intent(ResultActivity.this, AddProductActivity.class);
+                intent.putExtra("ProductID", getIntent().getStringExtra("ProductID"));
+                startActivity(intent);
             }
         });
     }

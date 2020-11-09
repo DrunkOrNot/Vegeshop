@@ -6,4 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".AddProductActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtProductID"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:text="Product ID" />
+
+        <TextView
+            android:id="@+id/txtProductName"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:text="Product Name" />
+
+        <EditText
+            android:id="@+id/inProductName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Product Name" />
+
+        <EditText
+            android:id="@+id/inIngredientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Ingredient Name" />
+
+        <Spinner
+            android:id="@+id/spTrait"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
