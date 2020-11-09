@@ -12,3 +12,9 @@ public class AddProductActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_product);
     }
 }
+
+
+
+
+
+

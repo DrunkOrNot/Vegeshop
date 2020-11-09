@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "958819353032",
+    "firebase_url": "https://vegeshop-6ac62.firebaseio.com",
+    "project_id": "vegeshop-6ac62",
+    "storage_bucket": "vegeshop-6ac62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958819353032:android:45d6996b9e962821c5c0fd",
+        "android_client_info": {
+          "package_name": "com.example.vegeshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958819353032-kc24vri6af5nisoiovn1c99357elmpt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUSwMqoVE4eB4j0AGkkMyuLlsqWh2PkOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958819353032-kc24vri6af5nisoiovn1c99357elmpt5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
