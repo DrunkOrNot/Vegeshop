@@ -47,15 +47,7 @@ public class BarcodeProcessor {
                                 Barcode.FORMAT_UPC_A,
                                 Barcode.FORMAT_UPC_E)
                         .build();
-        // [END set_detector_options]
-
-        // [START get_detector]
         BarcodeScanner scanner = BarcodeScanning.getClient();
-        // Or, to specify the formats to recognize:
-        // BarcodeScanner scanner = BarcodeScanning.getClient(options);
-        // [END get_detector]
-
-        // [START run_detector]
         Task<List<Barcode>> result = scanner.process(image)
                 .addOnSuccessListener(new OnSuccessListener<List<Barcode>>() {
                     @Override
@@ -72,23 +64,7 @@ public class BarcodeProcessor {
                             for(IRecognizeBarcodeListener listener:Listeners){
                                 listener.OnRecognizeBarcode(rawValue);
                             }
-
-                            int valueType = barcode.getValueType();
-                            // See API reference for complete list of supported types
-                            switch (valueType) {
-                                case Barcode.TYPE_WIFI:
-                                    String ssid = barcode.getWifi().getSsid();
-                                    String password = barcode.getWifi().getPassword();
-                                    int type = barcode.getWifi().getEncryptionType();
-                                    break;
-                                case Barcode.TYPE_URL:
-                                    String title = barcode.getUrl().getTitle();
-                                    String url = barcode.getUrl().getUrl();
-                                    break;
-                            }
                         }
-                        // [END get_barcodes]
-                        // [END_EXCLUDE]
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -98,9 +74,6 @@ public class BarcodeProcessor {
                         // ...
                     }
                 });
-        // [END run_detector]
-
-
     }
     public void AddListener(IRecognizeBarcodeListener listener){
         Listeners.add(listener);
