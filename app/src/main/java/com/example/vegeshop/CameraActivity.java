@@ -24,6 +24,8 @@ public class CameraActivity extends AppCompatActivity implements IRecognizeBarco
     Button btnCheck;
     BarcodeProcessor barcodeProcessor;
 
+    Boolean hasRecognizedImage = false;
+
 
     @Override
     protected void onResume() {
@@ -86,9 +88,18 @@ public class CameraActivity extends AppCompatActivity implements IRecognizeBarco
     }
 
     @Override
-    public void OnRecognizeBarcode(String ID) {
+    public void onRecognizeBarcode(String ID) {
+        hasRecognizedImage = true;
         Intent intent = new Intent(CameraActivity.this, ResultActivity.class);
         intent.putExtra("ProductID", ID);
         startActivity(intent);
+    }
+
+    @Override
+    public void onFinishedProcessingBarcode() {
+        if(!hasRecognizedImage) {
+            cameraView.start();
+            // TODO Toast
+        }
     }
 }

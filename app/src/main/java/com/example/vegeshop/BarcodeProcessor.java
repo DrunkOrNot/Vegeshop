@@ -21,6 +21,7 @@ import android.graphics.Rect;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -38,7 +39,6 @@ public class BarcodeProcessor {
     private ArrayList<IRecognizeBarcodeListener> Listeners =  new ArrayList<>();
 
     public void scanBarcodes(InputImage image) {
-        // [START set_detector_options]
         BarcodeScannerOptions options =
                 new BarcodeScannerOptions.Builder()
                         .setBarcodeFormats(
@@ -52,9 +52,6 @@ public class BarcodeProcessor {
                 .addOnSuccessListener(new OnSuccessListener<List<Barcode>>() {
                     @Override
                     public void onSuccess(List<Barcode> barcodes) {
-                        // Task completed successfully
-                        // [START_EXCLUDE]
-                        // [START get_barcodes]
                         for (Barcode barcode: barcodes) {
                             Rect bounds = barcode.getBoundingBox();
                             Point[] corners = barcode.getCornerPoints();
@@ -62,16 +59,23 @@ public class BarcodeProcessor {
                             String rawValue = barcode.getRawValue();
 
                             for(IRecognizeBarcodeListener listener:Listeners){
-                                listener.OnRecognizeBarcode(rawValue);
+                                listener.onRecognizeBarcode(rawValue);
                             }
+                        }
+                    }
+                })
+                .addOnCompleteListener(new OnCompleteListener<List<Barcode>>() {
+                    @Override
+                    public void onComplete(@NonNull Task<List<Barcode>> task) {
+                        for(IRecognizeBarcodeListener listener:Listeners){
+                            listener.onFinishedProcessingBarcode();
                         }
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        // Task failed with an exception
-                        // ...
+                        // Do not write any code in here, it never actually gets called...
                     }
                 });
     }
