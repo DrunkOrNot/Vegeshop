@@ -42,11 +42,11 @@ public class AddProductActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Product product = new Product();
                 product.ID = getIntent().getStringExtra("ProductID");
-                product.Name = inProductName.getText();
+                product.Name = inProductName.getText().toString();
                 Ingredient ingredient = new Ingredient();
                 ingredient.ID = String.valueOf(1);
-                ingredient.Name = inIngredientName.getText();
-                product.Ingredients.Add(ingredient);
+                ingredient.Name = inIngredientName.getText().toString();
+                product.Ingredients.add(ingredient);
 
                 Database.PostData(product);
 

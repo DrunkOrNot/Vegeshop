@@ -76,8 +76,6 @@ public class CameraActivity extends AppCompatActivity implements IRecognizeBarco
                 bitmap = Bitmap.createScaledBitmap(bitmap,  cameraView.getWidth(),  cameraView.getHeight(), false);
                 barcodeProcessor.scanBarcodes(InputImage.fromBitmap(bitmap, 0));
                 cameraView.stop();
-
-
             }
 
             @Override
