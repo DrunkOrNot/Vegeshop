@@ -10,6 +10,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Database {
 
@@ -39,6 +40,12 @@ public class Database {
                 }
             }
         });
+    }
+
+    public static String GetUniqueIDForIngredient() {
+        UUID uuid = UUID.randomUUID();
+        // TODO Query database if UUID does exist
+        return uuid.toString();
     }
 
     public static void AddListener(IUserDataChangeListener listener) { listeners.add(listener); }
