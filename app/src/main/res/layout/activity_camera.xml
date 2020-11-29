@@ -17,20 +17,20 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="600sp" />
+                android:layout_height="645dp" />
 
             <Button
                 android:id="@+id/btnCheck"
                 style="@android:style/Widget.Material.Button.Colored"
                 android:layout_width="match_parent"
-                android:layout_height="60sp"
+                android:layout_height="match_parent"
                 android:background="@android:color/holo_green_light"
                 android:backgroundTint="#4CAF50"
                 android:freezesText="false"
                 android:nestedScrollingEnabled="false"
                 android:shadowColor="#FFFFFF"
                 android:singleLine="false"
-                android:text="CHECK RESULT"
+                android:text="@string/check_result"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textIsSelectable="false"
@@ -38,10 +38,6 @@
                 android:verticalScrollbarPosition="defaultPosition"
                 app:rippleColor="#4CAF50"
                 app:strokeColor="#4DC351" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="60sp" />
 
         </LinearLayout>
 
@@ -51,7 +47,8 @@
             android:layout_height="66dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="-2dp"
-            tools:srcCompat="#4CAF50" />
+            tools:srcCompat="#4CAF50"
+            android:contentDescription="TODO" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -60,7 +57,8 @@
             android:layout_marginLeft="100dp"
             android:layout_marginTop="200dp"
             android:foreground="@android:color/holo_green_light"
-            app:srcCompat="@android:drawable/edit_text" />
+            app:srcCompat="@android:drawable/edit_text"
+            android:contentDescription="TODO" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -69,7 +67,8 @@
             android:layout_marginLeft="100dp"
             android:layout_marginTop="350dp"
             android:foreground="@android:color/holo_green_light"
-            app:srcCompat="@android:drawable/edit_text" />
+            app:srcCompat="@android:drawable/edit_text"
+            android:contentDescription="TODO" />
 
         <ImageView
             android:id="@+id/imageView8"
