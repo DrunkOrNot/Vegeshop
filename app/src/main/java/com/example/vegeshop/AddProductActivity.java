@@ -10,6 +10,7 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class AddProductActivity extends AppCompatActivity {
@@ -28,8 +29,13 @@ public class AddProductActivity extends AppCompatActivity {
         inProductName = findViewById(R.id.inProductName);
 
         ArrayList<String> traits = new ArrayList<>();
-        for (Trait trait : Trait.values()){
-            traits.add(String.valueOf(trait));
+        for (Field trait : Trait.IngredientTrait.class.getFields()){
+            String traitName = new String();
+            try {
+                traits.add((String.valueOf(trait.get(traitName))));
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, traits);
@@ -46,6 +52,7 @@ public class AddProductActivity extends AppCompatActivity {
                 Ingredient ingredient = new Ingredient();
                 ingredient.ID = String.valueOf(Database.GetUniqueIDForIngredient());
                 ingredient.Name = inIngredientName.getText().toString();
+                ingredient.Traits.add(spTrait.getSelectedItem().toString());
                 product.Ingredients.add(ingredient);
 
                 Database.PostData(product);
