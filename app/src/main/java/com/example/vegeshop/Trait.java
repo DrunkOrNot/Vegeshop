@@ -9,24 +9,26 @@ public class Trait {
 
     @Retention(RetentionPolicy.SOURCE)
     @StringDef({
-            MEAT,
-            DIARY,
-            GLUTEN,
-            HONEY,
-            FISH,
-            SEAFOOD,
-            LACTOSE,
+            IngredientTrait.MEAT,
+            IngredientTrait.DIARY,
+            IngredientTrait.GLUTEN,
+            IngredientTrait.HONEY,
+            IngredientTrait.FISH,
+            IngredientTrait.SEAFOOD,
+            IngredientTrait.LACTOSE,
     })
 
-    @interface IngredientTrait{}
+    @interface IngredientTrait{
+        public static final String MEAT = "Meat";
+        public static final String DIARY = "Diary";
+        public static final String GLUTEN = "Gluten";
+        public static final String HONEY = "Honey";
+        public static final String FISH = "Fish";
+        public static final String SEAFOOD = "Seafood";
+        public static final String LACTOSE = "Lactose";
+    }
 
-public static final String MEAT = "Meat";
-public static final String DIARY = "Diary";
-public static final String GLUTEN = "Gluten";
-public static final String HONEY = "Honey";
-public static final String FISH = "Fish";
-public static final String SEAFOOD = "Seafood";
-public static final String LACTOSE = "Lactose";
+
 
 private String trait;
 

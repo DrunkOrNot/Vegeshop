@@ -8,7 +8,7 @@ import java.util.List;
 public class Ingredient {
     public String ID;
     public String Name;
-    public List<Trait> Traits = new ArrayList<>();
+    public List<String> Traits = new ArrayList<>();
 
     public Ingredient(){
 
