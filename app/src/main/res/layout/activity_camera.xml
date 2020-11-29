@@ -10,6 +10,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="600sp" />
+
+            <Button
+                android:id="@+id/btnCheck"
+                style="@android:style/Widget.Material.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:background="@android:color/holo_green_light"
+                android:backgroundTint="#4CAF50"
+                android:freezesText="false"
+                android:nestedScrollingEnabled="false"
+                android:shadowColor="#FFFFFF"
+                android:singleLine="false"
+                android:text="CHECK RESULT"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textIsSelectable="false"
+                android:textSize="36sp"
+                android:verticalScrollbarPosition="defaultPosition"
+                app:rippleColor="#4CAF50"
+                app:strokeColor="#4DC351" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="60sp" />
+
+        </LinearLayout>
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="410dp"
@@ -17,42 +52,6 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="-2dp"
             tools:srcCompat="#4CAF50" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="197dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="15dp"
-            android:text="Vegeshop"
-            android:textAlignment="center"
-            android:textColor="#F3F3F3"
-            android:textSize="32sp"
-            app:autoSizeMaxTextSize="@android:dimen/dialog_min_width_minor"
-            app:autoSizeTextType="none"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="14dp" />
-
-        <Button
-            android:id="@+id/btnCheck"
-            style="@android:style/Widget.Material.Button.Colored"
-            android:layout_width="334dp"
-            android:layout_height="67dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="600dp"
-            android:background="@android:color/holo_green_light"
-            android:backgroundTint="#4CAF50"
-            android:freezesText="false"
-            android:nestedScrollingEnabled="false"
-            android:shadowColor="#FFFFFF"
-            android:singleLine="false"
-            android:text="CHECK RESULT"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textIsSelectable="false"
-            android:textSize="36sp"
-            android:verticalScrollbarPosition="defaultPosition"
-            app:rippleColor="#4CAF50"
-            app:strokeColor="#4DC351" />
 
         <ImageView
             android:id="@+id/imageView2"
