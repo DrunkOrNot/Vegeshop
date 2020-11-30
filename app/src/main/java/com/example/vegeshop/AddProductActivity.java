@@ -50,7 +50,6 @@ public class AddProductActivity extends AppCompatActivity {
                 product.ID = getIntent().getStringExtra("ProductID");
                 product.Name = inProductName.getText().toString();
                 Ingredient ingredient = new Ingredient();
-                ingredient.ID = String.valueOf(Database.GetUniqueIDForIngredient());
                 ingredient.Name = inIngredientName.getText().toString();
                 ingredient.Traits.add(spTrait.getSelectedItem().toString());
                 product.Ingredients.add(ingredient);

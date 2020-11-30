@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ingredient {
-    public String ID;
     public String Name;
     public List<String> Traits = new ArrayList<>();
 

@@ -9,7 +9,7 @@ public class Product {
 
     public String ID;
     public String Name;
-    public List<Ingredient> Ingredients = new ArrayList<>();
+    public ArrayList<Ingredient> Ingredients = new ArrayList<>();
 
     public Product(){
     }
