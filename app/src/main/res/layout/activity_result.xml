@@ -32,7 +32,7 @@
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="40dp"
-            android:text="RETRY"
+            android:text="@string/add_product"
             android:textSize="30sp" />
 
     </LinearLayout>

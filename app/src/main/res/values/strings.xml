@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Vegeshop</string>
     <string name="check_result">CHECK RESULT</string>
+    <string name="add_product">ADD PRODUCT</string>
 </resources>
