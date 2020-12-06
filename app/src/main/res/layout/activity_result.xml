@@ -35,7 +35,8 @@
             android:layout_marginRight="40dp"
             android:layout_marginBottom="40dp"
             android:text="@string/add_product"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            tools:visibility="invisible" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvIngredients"

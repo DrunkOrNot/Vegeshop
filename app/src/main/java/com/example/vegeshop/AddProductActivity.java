@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -56,8 +57,27 @@ public class AddProductActivity extends AppCompatActivity {
                 product.Ingredients.add(ingredient);
 
                 Database.PostData(product);
+                Toast.makeText(
+                        getApplicationContext(),
+                        "Product added to database",
+                        Toast.LENGTH_LONG)
+                        .show();
+                Thread timer = new Thread(){
 
-                startActivity(new Intent(AddProductActivity.this, CameraActivity.class));
+                    @Override
+                    public void run() {
+                        try {
+                            sleep(1000);
+                            Intent intentCamera = new Intent(getApplicationContext(), CameraActivity.class);
+                            startActivity(intentCamera);
+                            finish();
+                            super.run();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                timer.start();
             }
         });
     }

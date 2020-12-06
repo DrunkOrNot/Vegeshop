@@ -33,7 +33,7 @@ public class ResultActivity extends AppCompatActivity implements IUserDataChange
 
         Database.AddListener(this);
         Database.GetData(getIntent().getStringExtra("ProductID"));
-
+        btnForceAdd.setVisibility(View.INVISIBLE);
         btnForceAdd.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
@@ -58,12 +58,14 @@ public class ResultActivity extends AppCompatActivity implements IUserDataChange
     @Override
     public void onUserDataReceivedFromDatabase(Product product) {
         if(product == null){
+            btnForceAdd.setVisibility(View.VISIBLE);
             Toast.makeText(
                     ResultActivity.this,
                     "Product not found in the database",
                     Toast.LENGTH_LONG)
                     .show();
         }else{
+
             InitializeRecyclerView(product);
         }
     }
