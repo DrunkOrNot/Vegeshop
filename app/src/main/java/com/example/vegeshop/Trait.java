@@ -6,7 +6,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 public class Trait {
-
     @Retention(RetentionPolicy.SOURCE)
     @StringDef({
             IngredientTrait.MEAT,
@@ -16,6 +15,7 @@ public class Trait {
             IngredientTrait.FISH,
             IngredientTrait.SEAFOOD,
             IngredientTrait.LACTOSE,
+            IngredientTrait.NONE,
     })
 
     @interface IngredientTrait{
@@ -26,9 +26,8 @@ public class Trait {
         public static final String FISH = "Fish";
         public static final String SEAFOOD = "Seafood";
         public static final String LACTOSE = "Lactose";
+        public static final String NONE = "None";
     }
-
-
 
 private String trait;
 
@@ -41,4 +40,3 @@ this.trait = trait;
            return trait;
         }
 }
-       // https://www.youtube.com/watch?v=EP3XqzvAgts

@@ -1,6 +1,7 @@
 package com.example.vegeshop;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -56,6 +57,7 @@ public class AddProductActivity extends AppCompatActivity {
 
                 Database.PostData(product);
 
+                startActivity(new Intent(AddProductActivity.this, CameraActivity.class));
             }
         });
     }

@@ -11,18 +11,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtProductID"
-            android:layout_width="match_parent"
-            android:layout_height="41dp"
-            android:text="Product ID" />
-
-        <TextView
-            android:id="@+id/txtProductName"
-            android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:text="Product Name" />
-
         <EditText
             android:id="@+id/inProductName"
             android:layout_width="match_parent"

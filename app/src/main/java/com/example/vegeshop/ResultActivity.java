@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity implements IUserDataChangeListener{
 
     private Button btnForceAdd;
     private TextView txtID;
@@ -19,10 +20,6 @@ public class ResultActivity extends AppCompatActivity {
     private RecyclerView rvIngredients;
     private RecyclerView.Adapter ingredientsAdapter;
     private RecyclerView.LayoutManager ingredientsLayoutManager;
-
-    //TODO - remove dummy product
-    Product dummyProduct = new Product();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +29,12 @@ public class ResultActivity extends AppCompatActivity {
         btnForceAdd=findViewById(R.id.btnForceAdd);
         txtID=findViewById(R.id.txtID);
         txtName = findViewById(R.id.txtProductName);
-        InitializeRecyclerView();
-
         txtID.setText(getIntent().getStringExtra("ProductID"));
-        txtName.setText(dummyProduct.Name);
 
-       btnForceAdd.setOnClickListener(new View.OnClickListener() {
+        Database.AddListener(this);
+        Database.GetData(getIntent().getStringExtra("ProductID"));
+
+        btnForceAdd.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
@@ -48,33 +45,26 @@ public class ResultActivity extends AppCompatActivity {
         });
     }
 
-    protected void InitializeRecyclerView() {
-        // TODO - remove all dummies and replace with product actually received from database
-        Ingredient dummyIngredient = new Ingredient();
-        dummyIngredient.Name = "Karkowka";
-        dummyIngredient.Traits.add("Fish");
-        dummyIngredient.Traits.add("Honey");
-        dummyIngredient.Traits.add("Meat");
-        dummyIngredient.Traits.add("Diary");
-        dummyIngredient.Traits.add("Seafood");
-        dummyIngredient.Traits.add("Lactose");
-        dummyIngredient.Traits.add("Laasdadadctose");
-
-        Ingredient dummyIngredient2 = new Ingredient();
-        dummyIngredient2.Name = "Makaron";
-        dummyIngredient2.Traits.add("Diary");
-        dummyProduct.ID = "00";
-        dummyProduct.Name = "Ziemniak";
-        dummyProduct.Ingredients.add(dummyIngredient);
-        dummyProduct.Ingredients.add(dummyIngredient2);
-        // TODO - end remove
-
+    protected void InitializeRecyclerView(Product product) {
         rvIngredients = findViewById(R.id.rvIngredients);
         rvIngredients.setHasFixedSize(true);
         ingredientsLayoutManager = new LinearLayoutManager(this);
-        ingredientsAdapter = new IngredientViewAdapter(dummyProduct);
-
+        ingredientsAdapter = new IngredientViewAdapter(product);
         rvIngredients.setLayoutManager(ingredientsLayoutManager);
         rvIngredients.setAdapter(ingredientsAdapter);
+        txtName.setText(product.Name);
+    }
+
+    @Override
+    public void onUserDataReceivedFromDatabase(Product product) {
+        if(product == null){
+            Toast.makeText(
+                    ResultActivity.this,
+                    "Product not found in the database",
+                    Toast.LENGTH_LONG)
+                    .show();
+        }else{
+            InitializeRecyclerView(product);
+        }
     }
 }
