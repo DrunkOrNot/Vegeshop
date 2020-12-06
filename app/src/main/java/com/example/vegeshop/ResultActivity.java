@@ -16,9 +16,9 @@ public class ResultActivity extends AppCompatActivity {
     private Button btnForceAdd;
     private TextView txtID;
     private TextView txtName;
-    private RecyclerView rvHistory;
-    private RecyclerView.Adapter historyAdapter;
-    private RecyclerView.LayoutManager historyLayoutManager;
+    private RecyclerView rvIngredients;
+    private RecyclerView.Adapter ingredientsAdapter;
+    private RecyclerView.LayoutManager ingredientsLayoutManager;
 
     //TODO - remove dummy product
     Product dummyProduct = new Product();
@@ -58,6 +58,8 @@ public class ResultActivity extends AppCompatActivity {
         dummyIngredient.Traits.add("Diary");
         dummyIngredient.Traits.add("Seafood");
         dummyIngredient.Traits.add("Lactose");
+        dummyIngredient.Traits.add("Laasdadadctose");
+
         Ingredient dummyIngredient2 = new Ingredient();
         dummyIngredient2.Name = "Makaron";
         dummyIngredient2.Traits.add("Diary");
@@ -67,12 +69,12 @@ public class ResultActivity extends AppCompatActivity {
         dummyProduct.Ingredients.add(dummyIngredient2);
         // TODO - end remove
 
-        rvHistory = findViewById(R.id.rvIngredients);
-        rvHistory.setHasFixedSize(true);
-        historyLayoutManager = new LinearLayoutManager(this);
-        historyAdapter = new IngredientViewAdapter(dummyProduct);
+        rvIngredients = findViewById(R.id.rvIngredients);
+        rvIngredients.setHasFixedSize(true);
+        ingredientsLayoutManager = new LinearLayoutManager(this);
+        ingredientsAdapter = new IngredientViewAdapter(dummyProduct);
 
-        rvHistory.setLayoutManager(historyLayoutManager);
-        rvHistory.setAdapter(historyAdapter);
+        rvIngredients.setLayoutManager(ingredientsLayoutManager);
+        rvIngredients.setAdapter(ingredientsAdapter);
     }
 }

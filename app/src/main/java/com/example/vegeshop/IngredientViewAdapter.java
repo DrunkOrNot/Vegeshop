@@ -36,10 +36,11 @@ public class IngredientViewAdapter extends RecyclerView.Adapter<IngredientViewAd
         holder.ingredientTrait.setText("");
         if(currentIngredient.Traits.size() > 0) {
             for(String trait : currentIngredient.Traits) {
-                if(!ingredientColorHTML.containsKey(trait))
-                    throw new IllegalArgumentException(String.format("Trait's %s color not defined in the color scheme", trait));
-                String traitHTML = "<font color='" + ingredientColorHTML.get(trait) + "'>" + trait + "\n</font><br>";
-                holder.ingredientTrait.append(Html.fromHtml(traitHTML, 1));
+                if(ingredientColorHTML.containsKey(trait)) {
+                    String traitHTML = "<font color='" + ingredientColorHTML.get(trait) + "'>" + trait + "\n</font><br>";
+                    holder.ingredientTrait.append(Html.fromHtml(traitHTML, 1));
+                }
+
             }
         }
     }
