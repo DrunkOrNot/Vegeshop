@@ -42,11 +42,5 @@ public class Database {
         });
     }
 
-    public static String GetUniqueIDForIngredient() {
-        UUID uuid = UUID.randomUUID();
-        // TODO Query database if UUID does exist
-        return uuid.toString();
-    }
-
     public static void AddListener(IUserDataChangeListener listener) { listeners.add(listener); }
 }
