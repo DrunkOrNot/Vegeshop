@@ -4,39 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".ResultActivity"
     android:background="@drawable/bg"
-    tools:context=".ResultActivity">
+    android:layout_gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="100dp">
 
         <TextView
             android:id="@+id/txtProductName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white" />
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/holo_green_light"
+            android:backgroundTint="#4CAF50"
+            android:freezesText="false"
+            android:nestedScrollingEnabled="false"
+            android:shadowColor="#FFFFFF"
+            android:singleLine="false"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textIsSelectable="false"
+            android:textSize="28dp"
+            android:verticalScrollbarPosition="defaultPosition"
+            app:rippleColor="#4CAF50"
+            app:strokeColor="#4DC351"
+            android:text="@string/product_ident" />
 
         <TextView
             android:id="@+id/txtID"
             android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            android:ems="30"
             android:text="TextView" />
 
 
         <Button
             android:id="@+id/btnForceAdd"
+            style="@android:style/Widget.Material.Button.Colored"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginTop="100dp"
             android:layout_marginBottom="40dp"
+            android:background="@android:color/holo_green_light"
+            android:backgroundTint="#4CAF50"
+            android:freezesText="false"
+            android:nestedScrollingEnabled="false"
+            android:shadowColor="#FFFFFF"
+            android:singleLine="false"
             android:text="@string/add_product"
-            android:textSize="30sp"
-            tools:visibility="invisible" />
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textIsSelectable="false"
+            android:textSize="36sp"
+            android:verticalScrollbarPosition="defaultPosition"
+            app:rippleColor="#4CAF50"
+            app:strokeColor="#4DC351"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvIngredients"

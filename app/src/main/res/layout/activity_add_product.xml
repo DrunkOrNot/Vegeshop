@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddProductActivity">
+    tools:context=".AddProductActivity"
+    android:background="@drawable/bg"
+    android:layout_gravity="center">
 
     <LinearLayout
+        android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -17,26 +21,47 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Product Name" />
+            android:text="@string/product_name"
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/inIngredientName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Ingredient Name" />
+            android:text="@string/ingredient_name"
+            android:textColor="#FFFFFF" />
 
         <Spinner
             android:id="@+id/spTrait"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@android:color/white" />
 
         <Button
             android:id="@+id/btnAdd"
+            style="@android:style/Widget.Material.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add" />
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="40dp"
+            android:background="@android:color/holo_green_light"
+            android:backgroundTint="#4CAF50"
+            android:freezesText="false"
+            android:nestedScrollingEnabled="false"
+            android:shadowColor="#FFFFFF"
+            android:singleLine="false"
+            android:text="@string/add_product"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textIsSelectable="false"
+            android:textSize="36sp"
+            android:verticalScrollbarPosition="defaultPosition"
+            app:rippleColor="#4CAF50"
+            app:strokeColor="#4DC351" />
 
     </LinearLayout>
 

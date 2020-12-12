@@ -2,4 +2,7 @@
     <string name="app_name">Vegeshop</string>
     <string name="check_result">CHECK RESULT</string>
     <string name="add_product">ADD PRODUCT</string>
+    <string name="product_name">ADD PRODUCT NAME</string>
+    <string name="ingredient_name">ADD INGREDIENT NAME</string>
+    <string name="product_ident">THE ID OF YOUR PRODUCT IS:</string>
 </resources>
