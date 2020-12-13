@@ -34,11 +34,26 @@
             android:text="@string/ingredient_name"
             android:textColor="#FFFFFF" />
 
-        <Spinner
-            android:id="@+id/spTrait"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white" />
+            android:layout_height="wrap_content">
+            <Spinner
+                android:id="@+id/spTrait"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/white"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/spTrait"
+                app:srcCompat="@drawable/ic_arrow"
+                android:layout_weight="1"/>
+
+        </RelativeLayout>
 
         <Button
             android:id="@+id/btnAdd"
