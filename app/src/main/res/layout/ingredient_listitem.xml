@@ -5,21 +5,9 @@
     android:layout_below="@+id/txtID"
     android:padding="15dp">
 
-    <TextView
-        android:id="@+id/product_ingredients"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:textStyle="bold"
-        android:textAllCaps="false"
-        android:textColor="#4CAF50"
-        android:textSize="26dp"
-        android:text="@string/product_ingredients" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/product_ingredients"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView

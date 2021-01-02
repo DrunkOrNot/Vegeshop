@@ -7,5 +7,4 @@
     <string name="product_name">ADD PRODUCT NAME</string>
     <string name="ingredient_name">ADD INGREDIENT NAME</string>
     <string name="product_ident">YOUR PRODUCT\'S NAME/ID:</string>
-    <string name="product_ingredients">INGREDIENT\'S RESULTS:</string>
 </resources>

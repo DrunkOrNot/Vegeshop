@@ -9,11 +9,14 @@
     android:background="@drawable/bg"
     android:layout_gravity="center">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteY="100dp">
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/inProductName"
@@ -130,6 +133,7 @@
             style="@android:style/Widget.Material.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/lstAddedIngredients"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="40dp"
             android:background="@android:color/holo_green_light"
@@ -146,7 +150,6 @@
             android:verticalScrollbarPosition="defaultPosition"
             app:rippleColor="#4CAF50"
             app:strokeColor="#4DC351" />
-
     </LinearLayout>
-
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
