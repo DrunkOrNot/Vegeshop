@@ -19,7 +19,9 @@
             android:id="@+id/inProductName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:ems="10"
+            android:textSize="26dp"
             android:inputType="textPersonName"
             android:text=""
             android:hint="@string/product_name"
@@ -31,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:textSize="26dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="@string/ingredient_name"
@@ -62,16 +65,17 @@
                 tools:text=" X " />
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical">
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
 
             <Spinner
                 android:id="@+id/spTrait"
-                android:layout_width="300dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
+                android:layout_gravity="end"
                 android:layout_weight="1"
                 android:background="@android:color/white" />
 
@@ -79,11 +83,12 @@
                 android:id="@+id/arrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="0"
                 android:layout_toRightOf="@+id/spTrait"
-                android:layout_weight="1"
                 app:srcCompat="@drawable/ic_arrow" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
